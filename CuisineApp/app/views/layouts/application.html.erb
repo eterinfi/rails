@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CuisineApp</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="nav">
+          <% if current_user %>
+          <!-- 若用户已登录，显示用户电邮地址及登出链接 -->
+            <ul>
+              <li><%= current_user.email %></li>
+              <li><%= link_to "Logout", logout_path, method:"delete" %></li>
+            </ul>
+          <% else %>
+          <!-- 若用户尚未登陆，显示登陆链接和注册链接 -->
+            <ul>
+              <li><%= link_to "Login", login_path %></li>
+              <li><%= link_to "Signup", signup_path %></li>
+            </ul>
+          <% end %>
+        </div>
+        <div class="logo">
+        </div>
+      </div>
+    </div>
+    <%= yield %>
+  </body>
+</html>
