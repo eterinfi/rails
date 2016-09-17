@@ -1,0 +1,17 @@
+<div class="photos">
+  <div class="container">
+    <h1><%= @album.title %></h1>
+    <div class="row">
+      <% @photos.each do |p|%> 
+        <div class="item col-md-4">
+          <div class="img-container">
+            <%= image_tag p.image %>
+          </div>
+          <div class="photo-info">
+            <p><%= p.caption %></p> 
+          </div>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="albums">
+  <div class="container">
+    <div class="row">
+      <% @albums.each do |a|%> 
+        <div class="item col-md-4">
+          <div class="img-container">
+            <%= image_tag a.image %>
+          </div>
+          <div class="album-info">
+            <h2><%= a.title %></h2> 
+            <p>
+              <%= link_to "See Album",album_path(a) %>
+              <!-- 自动生成对应的链接 -->
+            </p>
+          </div>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>
