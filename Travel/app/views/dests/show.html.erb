@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1tm.svg" width="80">
+    <h1>BokenjiKan</h1>
+  </div>
+</div>
+
+<div class="dest">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= image_tag @dest.image %>
+        <h2><%= @dest.name %></h2>
+        <p><%= @dest.desc %></p>
+        <%= link_to "Edit", edit_dest_path(@dest) %>
+      </div>
+    </div>
+  </div>
+</div>
